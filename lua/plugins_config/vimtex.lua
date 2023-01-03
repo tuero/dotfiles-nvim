@@ -7,3 +7,8 @@ vim.g.vimtex_compiler_latexmk = {
         '-synctex=1'
     } 
 }
+
+vim.g.vimtex_quickfix_ignore_filters = {
+    'Overfull',
+    'Redefining Unicode character'
+}
