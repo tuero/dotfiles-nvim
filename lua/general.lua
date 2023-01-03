@@ -44,6 +44,9 @@ vim.g.maplocalleader = ' '
 vim.api.nvim_command([[ autocmd QuickFixCmdPost [^l]* nested cwindow ]])
 vim.api.nvim_command([[ autocmd QuickFixCmdPost l* nested lwindow ]])
 
+vim.api.nvim_command([[ au BufNewFile,BufRead *.cu set ft=cuda ]])
+vim.api.nvim_command([[ au BufNewFile,BufRead *.cuh set ft=cuda ]])
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })

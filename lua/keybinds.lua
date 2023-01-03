@@ -17,16 +17,31 @@ vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, { desc = '[d]iagnose
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
+-- Move lines without using the clipboard
+vim.keymap.set('n', '<M-k>', ":m .-2<CR>==", { noremap = true, silent = true })
+vim.keymap.set('n', '<M-j>', ":m .+1<CR>==", { noremap = true, silent = true })
+vim.keymap.set('v', '<M-k>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set('v', '<M-j>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+
 -- WhichKey 
 vim.keymap.set('n', '<leader>wk', ':silent WhichKey<CR>', { desc = "List [w]hich[k]ey" })
 
+-- C/C++ style keybinds
 -- Compile
 vim.keymap.set('n', '<leader>cc', function()
     if vim.bo.filetype == "cpp" or vim.bo.filetype == "cxx" then
-        vim.cmd("let &makeprg = 'g++ -Wall -Wextra -std=c++17 -g -ggdb -Og %'")
+        vim.cmd("let &makeprg = 'g++ -Wall -Wextra -std=c++20 -g -ggdb -Og %'")
         vim.cmd("make | cwindow")
     end
 end, { desc = "List [c]ompile [c]ode" })
+-- Switch header source
+vim.keymap.set('n', '<M-o>', function()
+    if vim.bo.filetype == "cpp" or vim.bo.filetype == "cxx" or vim.bo.filetype == "c" then
+        vim.cmd("ClangdSwitchSourceHeader")
+    end
+end, { desc = "switch source header" })
+-- ClangFormat
+vim.keymap.set('n', '<M-F>', ':ClangFormat<CR>', { desc = "ClangFormat" })
 
 -- Telescope
 -- See `:help telescope.builtin`

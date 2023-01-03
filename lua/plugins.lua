@@ -70,13 +70,12 @@ return function(use)
     -- Themes
     use 'navarasu/onedark.nvim' -- Theme inspired by Atom
     use 'projekt0n/github-nvim-theme'
-    -- use 'arzg/vim-colors-xcode'
-    -- use {
-    --     "mcchrish/zenbones.nvim",
-    --     -- Optionally install Lush. Allows for more configuration or extending the colorscheme
-    --     -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
-    --     -- In Vim, compat mode is turned on as Lush only works in Neovim.
-    --     requires = "rktjmp/lush.nvim"
-    -- }
-    -- use 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
+    use {
+        "mcchrish/zenbones.nvim",
+        -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+        -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+        -- In Vim, compat mode is turned on as Lush only works in Neovim.
+        requires = "rktjmp/lush.nvim"
+    }
+
 end

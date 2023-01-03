@@ -6,8 +6,14 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
--- empty setup using defaults
-require("nvim-tree").setup()
+-- Show untracked files (useful for project experiments)
+require("nvim-tree").setup{
+    git = {
+        enable = true,
+        ignore = false,
+        timeout = 400,
+    }
+}
 
 -- Toggle side panel
 vim.api.nvim_set_keymap('n', '<F8>', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
