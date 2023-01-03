@@ -78,4 +78,7 @@ return function(use)
         requires = "rktjmp/lush.nvim"
     }
 
+    use 'lervag/vimtex'
+    use 'preservim/vim-markdown'
+
 end

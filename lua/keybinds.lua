@@ -8,14 +8,15 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- Quit
-vim.keymap.set('n', '<leader>qq', ":q<CR>", { desc = '[qq]uit' })
+-- System standard bindings
+vim.keymap.set('n', '<leader>q', ":q<CR>", { desc = '[q]uit' })
+vim.keymap.set('n', '<leader>w', ":w<CR>", { desc = '[w]rite' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, { desc = '[d]iagnose [p]rev error' })
 vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, { desc = '[d]iagnose [n]ext error' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float)
+vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist)
 
 -- Move lines without using the clipboard
 vim.keymap.set('n', '<M-k>', ":m .-2<CR>==", { noremap = true, silent = true })
