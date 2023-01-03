@@ -25,7 +25,7 @@ vim.keymap.set('v', '<M-k>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true
 vim.keymap.set('v', '<M-j>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 
 -- WhichKey 
-vim.keymap.set('n', '<leader>wk', ':silent WhichKey<CR>', { desc = "List [w]hich[k]ey" })
+vim.keymap.set('n', '<leader>h', ':silent WhichKey<CR>', { desc = "List [w]hich[k]ey" })
 
 -- C/C++ style keybinds
 -- Compile
