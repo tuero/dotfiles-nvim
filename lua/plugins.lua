@@ -78,7 +78,30 @@ return function(use)
         requires = "rktjmp/lush.nvim"
     }
 
+    -- Latex
     use 'lervag/vimtex'
     use 'preservim/vim-markdown'
+
+    -- Snippets
+    use 'SirVer/ultisnips'
+    use 'honza/vim-snippets'
+
+    -- Close buffer without messing window placement
+    use 'famiu/bufdelete.nvim'
+
+    -- Scroll bar
+    use 'petertriho/nvim-scrollbar'
+
+    -- Auto highlight all occurances of word
+    use 'RRethy/vim-illuminate'
+
+    -- Winbar
+    use {
+        "SmiteshP/nvim-navic",
+        requires = "neovim/nvim-lspconfig"
+    }
+
+    -- Highlighting current search
+    use 'rktjmp/highlight-current-n.nvim'
 
 end

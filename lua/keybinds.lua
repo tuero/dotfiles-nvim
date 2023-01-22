@@ -1,5 +1,8 @@
 -- [[ Basic Keymaps ]]
 
+-- Close all other splits
+-- <C-w o>
+
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
@@ -9,8 +12,13 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- System standard bindings
-vim.keymap.set('n', '<leader>q', ":q<CR>", { desc = '[q]uit' })
+vim.keymap.set('n', '<leader>qa', ":qa<CR>", { desc = '[qa]uit' })
+vim.keymap.set('n', '<leader>qw', ":Bdelete<CR>", { desc = '[q]uit [w]indow' })
 vim.keymap.set('n', '<leader>w', ":w<CR>", { desc = '[w]rite' })
+
+-- Copy and paste to/from a temporary file (helps with copying over remote ssh)
+vim.keymap.set('v', '<leader>cf', ":w! ~/.vbuf<CR>", { desc = '[c]opy to [f]ile' })
+vim.keymap.set('n', '<leader>pf', ":r ~/.vbuf<CR>", { desc = '[p]aste from [f]ile' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, { desc = '[d]iagnose [p]rev error' })

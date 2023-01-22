@@ -12,7 +12,10 @@ require("nvim-tree").setup{
         enable = true,
         ignore = false,
         timeout = 400,
-    }
+    },
+    update_focused_file = {
+        enable = true,
+    },
 }
 
 -- Toggle side panel

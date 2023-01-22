@@ -40,6 +40,11 @@ vim.o.completeopt = 'menuone,noselect'
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Tab spaces
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+
 -- Automatically open quickfix qindow after :make or other quickfix-related commands, when valid errors
 vim.api.nvim_command([[ autocmd QuickFixCmdPost [^l]* nested cwindow ]])
 vim.api.nvim_command([[ autocmd QuickFixCmdPost l* nested lwindow ]])
