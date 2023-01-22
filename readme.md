@@ -5,6 +5,11 @@ Name this folder as `nvim`, and copy/paste into `.config`.
 Run `nvim` to let the packages download and install. 
 May need to run `:PackerInstall`.
 
+If an error about python3 provider occurs, run
+```
+pip install pynvim
+```
+
 For Python debugging, create a virtualenv and run
 ```
 pip install debugpy
