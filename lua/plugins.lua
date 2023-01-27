@@ -11,6 +11,10 @@ return function(use)
         },
     }
 
+    -- tresitter doesn't like python
+    use 'nvie/vim-flake8'
+    use { 'psf/black', brach = 'stable' }
+
     use { -- DAP
         "rcarriga/nvim-dap-ui", 
         requires = {"mfussenegger/nvim-dap"} 

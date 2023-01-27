@@ -50,7 +50,13 @@ vim.keymap.set('n', '<M-o>', function()
     end
 end, { desc = "switch source header" })
 -- ClangFormat
-vim.keymap.set('n', '<M-F>', ':ClangFormat<CR>', { desc = "ClangFormat" })
+vim.keymap.set('n', '<M-F>', function()
+    if vim.bo.filetype == "cpp" or vim.bo.filetype == "cxx" or vim.bo.filetype == "c" or vim.bo.filetype == "cuda" then
+        vim.cmd("ClangFormat")
+    elseif vim.bo.filetype == 'python' then
+        vim.cmd("Black")
+    end
+end, { desc = "ClangFormat" })
 
 -- Telescope
 -- See `:help telescope.builtin`

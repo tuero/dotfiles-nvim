@@ -21,8 +21,13 @@ require('nvim-treesitter.configs').setup {
         'help' 
     },
   
-    highlight = { enable = true },
-    indent = { enable = true },
+    highlight = { 
+        enable = true,
+    },
+    indent = { 
+        enable = true,
+        disable = {"python"}
+    },
     incremental_selection = {
         enable = true,
         keymaps = {

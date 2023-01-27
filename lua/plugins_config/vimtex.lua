@@ -10,5 +10,6 @@ vim.g.vimtex_compiler_latexmk = {
 
 vim.g.vimtex_quickfix_ignore_filters = {
     'Overfull',
-    'Redefining Unicode character'
+    'Redefining Unicode character',
+    'Underfull'
 }
