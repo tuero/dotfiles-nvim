@@ -31,6 +31,8 @@ vim.keymap.set('n', '<M-k>', ":m .-2<CR>==", { noremap = true, silent = true })
 vim.keymap.set('n', '<M-j>', ":m .+1<CR>==", { noremap = true, silent = true })
 vim.keymap.set('v', '<M-k>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set('v', '<M-j>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set('v', '<', "<gv", { noremap = true, silent = true })
+vim.keymap.set('v', '>', ">gv", { noremap = true, silent = true })
 
 -- WhichKey 
 vim.keymap.set('n', '<leader>h', ':silent WhichKey<CR>', { desc = "List [w]hich[k]ey" })
