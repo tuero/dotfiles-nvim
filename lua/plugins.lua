@@ -108,4 +108,7 @@ return function(use)
     -- Highlighting current search
     use 'rktjmp/highlight-current-n.nvim'
 
+    -- tab bar
+    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+
 end
